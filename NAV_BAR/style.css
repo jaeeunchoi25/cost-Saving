@@ -1,0 +1,154 @@
+:root{
+    --text-color: #f0f4f5;
+    --background-color: #000000;
+    --accent-color: #ffffff;
+}
+body{
+    margin: 0;
+    font-family: 'Open Sans';
+    padding-top: 60px; /* navbar 높이만큼 패딩 추가 */
+}
+a{
+    font-size: 15px;
+    text-decoration: none;
+    color: var(--text-color);
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--background-color);
+    padding: 8px 12px;
+    position: fixed; /* 헤더를 고정 위치로 설정 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* 다른 콘텐츠보다 앞에 표시되도록 설정 */
+}
+
+
+.navbar_logo{
+    font-size: 24px;
+    color: var(--text-color);
+
+}
+
+.navbar_logo{
+    color: darkred;
+    color: var(--text-color);
+}
+
+.navbar_menu{
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+
+.navbar_menu li{
+    padding: 8px 12px;
+}
+
+.navbar_menu li:hover{
+    background-color: var(--accent-color);
+    border-radius: 4px;
+}
+.navbar_menu li:hover{
+    background-color:#4d4d4d52;
+    border-radius: 4px;
+}
+
+.navbar_toogleBtn{
+    display: none; /*화면작아졌을때만 버튼나오게*/
+    position: absolute;
+    right: 32px;
+    font-size: 24px;
+    color: #ffffff;
+    /*color: var(--accent-color);*/
+}
+
+
+
+.navbar_icons li{
+    padding: 8px 12px;
+}
+
+
+@media screen and (max-width: 767px){
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;    /*좌측정렬*/
+        padding: 8px 24px;
+    }
+
+    .navbar_menu{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    /*얘가 안보임*/
+    .navbar_icons{
+        list-style: none;
+        color: #ffffff;
+        /*color: var(--accent-color);*/
+        padding-left: 0;
+        justify-content: center;
+        width: 100%;
+        display: none;
+    }
+    .navbar_menu li{
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar_toogleBtn{
+        display: block;
+    }
+
+    .navbar_menu.active,
+    .navbar_icons.active {
+        display: flex;
+    }
+}
+
+/*서브메뉴*/
+*{padding:0;margin:0}
+li{list-style:none}
+a{text-decoration:none;font-size:14px}
+
+.navbar_menu {
+    width: 800px;
+    overflow: hidden;
+    margin: 150px auto;
+}
+  
+.navbar_menu > li {
+    width: 20%; /*20*5=100%*/
+    float: left;
+    text-align: center;
+    line-height: 40px;
+}
+  
+.navbar_menu a {
+    color: #fff;
+}
+  
+  .submenu > li {
+    line-height: 50px;
+    background-color:#4d4d4d52;
+}
+  
+.submenu {
+    height: 0; /*ul의 높이를 안보이게 처리*/
+    overflow: hidden;
+}
+.navbar_menu > li:hover {
+    background-color: #4d4d4d52;
+    transition-duration: 0.5s;
+}
+  
+.navbar_menu > li:hover .submenu {
+    height: 250px; /*서브메뉴 li한개의 높이 50*5*/
+    transition-duration: 1s
+};
